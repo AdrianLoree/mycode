@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''for loop displaying custom code 01 of lab 24'''
 #import standard library
-import json
+#import json
 
 #data set to disaply
 farms = [{"name": "NE Farm", "agriculture": ["sheep", "cows", "pigs", "chickens", "llamas", "cats"]},
@@ -13,7 +13,7 @@ farms = [{"name": "NE Farm", "agriculture": ["sheep", "cows", "pigs", "chickens"
 #    for key,value in item.items():
 #        print(value)
 for x in farms:
-    print(x.get("name") "-" x.get("agriculture"))
+    print(x.get("name"),  x.get("agriculture"))
 
-for x in farms:
-    print(x.get("agriculture"))
+#for x in farms:
+#    print(x.get("agriculture"))
