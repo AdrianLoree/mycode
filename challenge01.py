@@ -65,7 +65,7 @@ def main():
             guess= input("What is Barry Allen's secret identity? ")
 
 #compare the guess to the correct answer and converts all text to lower so it will always match
-            if guess.lower() == "the flash":
+            if guess.lower() == "flash":
         #tell the user that they got the right answer
                 print("Correct! The Flash is Barry Allen's secret identity! Congrats!")
 
