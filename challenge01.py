@@ -2,7 +2,7 @@
 '''challenege to create a guessing game with multiple choice questsions By Adrian'''
 
 #script function
-def main()
+def main():
     '''loads at runtime'''
 
 #user input to answer the question
