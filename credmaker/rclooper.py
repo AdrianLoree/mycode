@@ -4,9 +4,6 @@
 #standard library import
 import csv
 
-which = input("Do you want manually create a file (1) or read from csv_users.txt (2)? ") 
-ans = which
-
 def auto():
     #open csv file data
     with open("csv_users.txt", "r") as csvfile:
@@ -33,6 +30,9 @@ def auto():
 
     #close all open files
 
+    #print out that all files have been created when the loop is compelted
+    print("admin.rc files created!")
+
 def manual():
     #!/usr/bin/env python3
     outFile = open("admin.rc", "a")
@@ -58,15 +58,14 @@ def manual():
     outFile.close()
 
 def main():
+    ans = input("Do you want manually create a file (1) or read from csv_users.txt (2)? ")
 
     if ans == "1":
-
+        manual()
                  
     elif ans == "2":
-        
+        auto()
     else:
         print("Please type in either 1 or 2")
 
-
-#print out that all files have been created when the loop is compelted
-print("admin.rc files created!")
+main()
