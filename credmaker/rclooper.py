@@ -60,10 +60,10 @@ def manual():
 def main():
 
     if ans == "1":
-       print(auto())
-            
+
+                 
     elif ans == "2":
-        print(manual())
+        
     else:
         print("Please type in either 1 or 2")
 
