@@ -18,7 +18,7 @@ def main():
 
     types = input("What type of cards do you wish to see? ").lower()
    
-    resptypes = requests.get(f"{API}cards?{type}")
+    resptypes = requests.get(f"{API}cards?type={types}")
 
     cards = resptypes.text
     #load the json file
