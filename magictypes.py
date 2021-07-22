@@ -28,6 +28,8 @@ def main():
     types = input("What type of cards do you wish to see?\
 (example Land, Artifact, etc.) ").capitalize()
 
+
+
     #send url request to API
     resptypes = requests.get(f"{API}cards?type={types}")
 
