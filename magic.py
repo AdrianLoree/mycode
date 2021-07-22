@@ -16,7 +16,7 @@ def main():
     json_dict= json.loads(cards)
     cardoutput = pandas.DataFrame.from_dict(json_dict["cards"])
 
-    cardoutput.to_excel("cards.xlsx")
+    cardoutput.to_excel(f'{setcode}cards.xlsx')
      
 
 if __name__ == "__main__":
