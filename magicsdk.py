@@ -8,5 +8,6 @@ sets = Set.find(f'{cardfind}')
 print(sets.name, sets.code)
 cards = Card.where(set_name=f'{sets.name}')
 
-print(cards)
+#print(cards.text)
 
+print(cards)
