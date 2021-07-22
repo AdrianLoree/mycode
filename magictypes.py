@@ -16,10 +16,12 @@ def main():
 
     print(ctypes)
 
-    types = input("What type of cards do you wish to see? ").lower()
+    types = input("What type of cards do you wish to see? ").capitalize()
    
     resptypes = requests.get(f"{API}cards?type={types}")
+    card = resptypes.json()
 
+    print(card)
     cards = resptypes.text
     #load the json file
     json_dict= json.loads(cards)
