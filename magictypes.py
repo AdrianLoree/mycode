@@ -22,11 +22,17 @@ def main():
     card = resptypes.json()
 
     print(card)
+    
     cards = resptypes.text
+    
     #load the json file
+    
     json_dict= json.loads(cards)
+    
     #use panada to read the file into dataframe
+    
     cardoutput = pandas.DataFrame.from_dict(json_dict["cards"])
+    
     #using the setcode inputted it names excel file setcodecards.xlsx
     cardoutput.to_excel(f'{types}-cards.xlsx')
 
