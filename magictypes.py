@@ -16,12 +16,12 @@ def main():
 
     print(ctypes)
 
-    types = input("What type of cards do you wish to see? ").capitalize()
+    types = input("What type of cards do you wish to see? (example Land, Artifact, etc.) ").capitalize()
    
     resptypes = requests.get(f"{API}cards?type={types}")
-    card = resptypes.json()
+#    card = resptypes.json()
 
-    print(card)
+#    print(card)
     
     cards = resptypes.text
     
@@ -36,7 +36,7 @@ def main():
     #using the setcode inputted it names excel file setcodecards.xlsx
     cardoutput.to_excel(f'{types}-cardlist.xlsx')
 
-    
+    print("file created!")
 
 if __name__ == "__main__":
     main()
