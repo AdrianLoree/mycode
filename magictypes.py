@@ -34,7 +34,7 @@ def main():
     cardoutput = pandas.DataFrame.from_dict(json_dict["cards"])
     
     #using the setcode inputted it names excel file setcodecards.xlsx
-    cardoutput.to_excel(f'{types}-cards.xlsx')
+    cardoutput.to_excel(f'{types}-cardlist.xlsx')
 
     
 
