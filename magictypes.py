@@ -4,7 +4,6 @@
 #import standard libaries
 import requests
 import pandas
-import crayons
 
 #API variable for url
 API = "https://api.magicthegathering.io/v1/"
@@ -40,12 +39,11 @@ def main():
 
     #use panada to read the file into dataframe
 
-    cardoutput = pandas.DataFrame.from_dict(get.json("card"))
+    cardoutput = pandas.DataFrame.from_dict(card.get("card"))
 
     #using the setcode inputted it names excel file setcodecards.xlsx
     cardoutput.to_excel(f'{types}-cardlist.xlsx')
-
-    print(crayons.green("file created!"))
+    print("file created!")
 
 if __name__ == "__main__":
     main()
