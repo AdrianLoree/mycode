@@ -47,7 +47,7 @@ def main():
             card = resptypes.json()
 
             #use panada to read the file into dataframe
-            cardoutput = pandas.DataFrame.from_dict(card.get("card"))
+            cardoutput = pandas.DataFrame.from_dict(card.get(""))
 
             #using the setcode inputted it names excel file setcodecards.xlsx
             cardoutput.to_excel(f'{types}-cardlist-{date}.xlsx')
