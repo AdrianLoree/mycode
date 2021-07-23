@@ -13,24 +13,6 @@ API = "https://api.magicthegathering.io/v1/"
 #date va
 date= datetime.datetime.now().strftime("%Y-%m-%d")
 
-# file creation function
-def makefile(types):
-    '''pandas used to print out user input to excel file'''
-
-    #send url request to API
-    resptypes = requests.get(f"{API}cards?type={types}")
-
-    #used to show resonse was working
-    card = resptypes.json()
-
-    #use panada to read the file into dataframe
-    cardoutput = pandas.DataFrame.from_dict(card.get("card"))
-
-    #using the setcode inputted it names excel file setcodecards.xlsx
-    cardoutput.to_excel(f'{types}-cardlist-{date}.xlsx')
-    print("file created!" + '\n')
-
-
 #main function of script that will run when the script is run
 def main():
     '''loads at runtime'''
@@ -49,23 +31,29 @@ def main():
         print(ctypes.get('types'))
 
         # take user input
-        inputtypes = input('\n' + "What type of cards do you wish to see?\
+        types = input('\n' + "What type of cards do you wish to see?\
 (example Land, Artifact, etc. type quit to stop): ").capitalize()
 
         # if user types in value that matches return response to output to file
-        if inputtypes in ctypes.get('types'):
+        if types in ctypes.get('types'):
 
             #send url request to API
-#           resptypes = requests.get(f"{API}cards?type={types}")
+            resptypes = requests.get(f"{API}cards?type={types}")
 
             #used to show resonse was working
-#            card = resptypes.json()
+            card = resptypes.json()
 
-            #send data to makefile function
-            makefile(inputtypes)
+            #use panada to read the file into dataframe
+            cardoutput = pandas.DataFrame.from_dict(card.get("card"))
+
+            #using the setcode inputted it names excel file setcodecards.xlsx
+            cardoutput.to_excel(f'{types}-cardlist-{date}.xlsx')
+
+            #tell user file is made
+            print("file created!" + '\n')
 
         # quit the script if user types in quit
-        elif inputtypes == 'Quit':
+        elif types == 'Quit':
             break
 
         # if value is not in types tell the user
