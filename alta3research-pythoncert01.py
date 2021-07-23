@@ -22,7 +22,7 @@ def makefile(types, card):
 
     #using the setcode inputted it names excel file setcodecards.xlsx
     cardoutput.to_excel(f'{types}-cardlist-{date}.xlsx')
-    print("file created!")
+    print("file created!" + '\n')
 
 
 #main function of script that will run when the script is run
@@ -40,14 +40,14 @@ def main():
         ctypes = resp.json()
 
         #display options
-        print(ctypes)
+        print(ctypes.get('types'))
 
         # take user input
-        types = input("What type of cards do you wish to see?\
+        types = input('\n' + "What type of cards do you wish to see?\
 (example Land, Artifact, etc. type quit to stop): ").capitalize()
 
         # if user types in value that matches return response to output to file
-        if types == ctypes.values:
+        if types in ctypes.get('types'):
 
             #send url request to API
             resptypes = requests.get(f"{API}cards?type={types}")
@@ -62,9 +62,9 @@ def main():
         elif types == 'Quit':
             break
 
-        # if input is not in the type of cards warn the user to try again.
+        # if value is not in types tell the user
         else:
-            print('That is not in the list of types! Try again!')
+            print('That is not a type please try again!' + '\n')
 
     # test code to make sure
     #   print(card)
