@@ -18,8 +18,9 @@ def makefile(card, types):
 
     #use panada to read the file into dataframe
     cardoutput = pandas.DataFrame.from_dict(card.get("cards"))
+
     # test output
-    print(cardoutput)
+    #print(cardoutput)
 
     #using the setcode inputted it names excel file setcodecards.xlsx
     cardoutput.to_excel(f'{types}-cardlist-{date}.xlsx')
@@ -50,7 +51,7 @@ def main():
 
         # if user types in value that matches return response to output to file
         if types in ctypes.get('types'):
-  
+
             #send url request to API
             resptypes = requests.get(f"{API}cards?type={types}")
 
