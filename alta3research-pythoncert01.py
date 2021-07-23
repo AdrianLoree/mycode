@@ -14,7 +14,7 @@ API = "https://api.magicthegathering.io/v1/"
 date= datetime.datetime.now().strftime("%Y-%m-%d")
 
 # file creation function
-def makefile(types, card):
+def makefile(card, types):
     '''pandas used to print out user input to excel file'''
 
     #use panada to read the file into dataframe
@@ -56,7 +56,7 @@ def main():
             card = resptypes.json()
 
             #send data to makefile function
-            makefile(types, card)
+            makefile(card, types)
 
         # quit the script if user types in quit
         elif types == 'Quit':
