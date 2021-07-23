@@ -24,10 +24,14 @@ def main():
     # begin!
     print("Simulation running")
     print("==================")
+    # if game number is less than number of games to run loop through script
     while game_number < number_of_games:
+        #swapper script is run
         swapper.roll()
+        # dice load script is run
         loaded_dice.roll()
-
+        
+        #cheating script run
         swapper.cheat()
         loaded_dice.cheat()
         """Remove # before print statements to see simulation running
@@ -39,13 +43,17 @@ def main():
         #print("Cheater 2 rolled" + str(loaded_dice.get_dice()))
         if sum(swapper.get_dice()) == sum(loaded_dice.get_dice()):
             #print("Draw!")
+            #do not add to either score
             pass
         elif sum(swapper.get_dice()) > sum(loaded_dice.get_dice()):
             #print("Dice swapper wins!")
+            # increase swapper score by 1
             swapper_score+= 1
         else:
             #print("Loaded dice wins!")
+            #increase loaded score by 1
             loaded_dice_score += 1
+        # increase the game number by 1
         game_number += 1
 
     # the game has ended
@@ -57,10 +65,13 @@ def main():
     print(f"Loaded dice won: {loaded_dice_score}")
 
     # determine the winner
+    # if the game is a draw
     if swapper_score == loaded_dice_score:
         print("Game was drawn")
+    # if the swapper won more than the loaded dice
     elif swapper_score > loaded_dice_score:
         print("Swapper won most games")
+    # if the loaded won more games
     else:
         print("Loaded dice won most games")
 
