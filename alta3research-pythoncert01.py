@@ -49,11 +49,11 @@ def main():
         print(ctypes.get('types'))
 
         # take user input
-        types = input('\n' + "What type of cards do you wish to see?\
+        inputtypes = input('\n' + "What type of cards do you wish to see?\
 (example Land, Artifact, etc. type quit to stop): ").capitalize()
 
         # if user types in value that matches return response to output to file
-        if types in ctypes.get('types'):
+        if inputtypes in ctypes.get('types'):
 
             #send url request to API
 #           resptypes = requests.get(f"{API}cards?type={types}")
@@ -62,10 +62,10 @@ def main():
 #            card = resptypes.json()
 
             #send data to makefile function
-            makefile(types)
+            makefile(inputtypes)
 
         # quit the script if user types in quit
-        elif types == 'Quit':
+        elif inputtypes == 'Quit':
             break
 
         # if value is not in types tell the user
