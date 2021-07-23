@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''Script to print out Magic the Gathering cards
-    from a user inputed type'''
+    from a user inputed type | Author Adrian Loree'''
 
 #import standard libaries
 import datetime
