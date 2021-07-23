@@ -10,7 +10,7 @@ import pandas
 #API variable for url
 API = "https://api.magicthegathering.io/v1/"
 
-#date va
+#date variable
 date= datetime.datetime.now().strftime("%Y-%m-%d")
 
 def makefile(card, types):

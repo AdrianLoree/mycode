@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''Script to print out Magic the Gathering cards
-    from a user inputed type | Author Adrian Loree'''
+    from a user inputed type'''
 
 #import standard libaries
 import datetime
@@ -10,7 +10,7 @@ import pandas
 #API variable for url
 API = "https://api.magicthegathering.io/v1/"
 
-#date va
+#date variable
 date= datetime.datetime.now().strftime("%Y-%m-%d")
 
 def makefile(card, types):
@@ -18,7 +18,6 @@ def makefile(card, types):
 
     #use panada to read the file into dataframe
     cardoutput = pandas.DataFrame.from_dict(card.get("cards"))
-
     # test output
     #print(cardoutput)
 
@@ -26,7 +25,7 @@ def makefile(card, types):
     cardoutput.to_excel(f'{types}-cardlist-{date}.xlsx')
 
     #tell user file is made
-    #print("file created!" + '\n')
+    print("file created!" + '\n')
 
 #main function of script that will run when the script is run
 def main():
