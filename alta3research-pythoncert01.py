@@ -37,6 +37,9 @@ def main():
         # if user types in value that matches return response to output to file
         if types in ctypes.get('types'):
 
+            #api request
+            resp = requests.get(f"{API}types")
+            
             #send url request to API
             resptypes = requests.get(f"{API}cards?type={types}")
 
